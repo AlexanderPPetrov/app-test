@@ -91,6 +91,8 @@ export const RemoteConfigContextProvider = (props) => {
         }
 
         setup().then(() => {
+            //TODO that gives a warning that we are passing json object instead of a string,
+            // we need to check what needs to be passed
             remoteConfig().setDefaults(config)
                 .then(() => remoteConfig().fetchAndActivate())
                 .then(async fetchedRemotely => {
