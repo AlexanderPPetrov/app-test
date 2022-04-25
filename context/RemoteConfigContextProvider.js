@@ -44,6 +44,8 @@ export const RemoteConfigContextProvider = (props) => {
             console.log('merged default config with stored:', mergedConfig)
         }
         //Get only valid key:values from remote
+        //TODO we need to check if values from remote that are not defined in defaults will appear
+        // if that's not the case there is no need to do the check: if(configDefaults[key] !== undefined)
         const getRemoteValues = () => {
             const parameters = remoteConfig().getAll();
             const remoteValues = Object.entries(parameters).reduce((acc, curr) => {
