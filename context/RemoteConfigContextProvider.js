@@ -14,6 +14,7 @@ export const RemoteConfigContextProvider = (props) => {
     useEffect(() => {
 
         const setRemoteConfigSettings = async () => {
+            //TODO change interval to something reasonable maybe 30000(5minutes), 0 is for development purposes
             await remoteConfig().setConfigSettings({
                 minimumFetchIntervalMillis: 0,
             })
